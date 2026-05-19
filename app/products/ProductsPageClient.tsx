@@ -21,15 +21,26 @@ import { toast } from "sonner";
 
 type Product = {
   id: string;
+
   name: string;
+
   description: string;
+
   price: number;
+
   image: string;
+
   stock: number;
+
   category: string;
 
-  flashSalePrice?: number;
-  flashSaleEnd?: string;
+  createdAt: Date;
+
+  flashSalePrice:
+    number | null;
+
+  flashSaleEnd:
+    Date | null;
 };
 
 export default function ProductsPageClient({
@@ -149,7 +160,7 @@ useEffect(() => {
 ]);
 
 function getCountdown(
-  endDate: string
+  endDate: Date
 ) {
 
   const total =
