@@ -599,36 +599,30 @@ export default function AdminPage() {
                   <UploadButton
                     endpoint="imageUploader"
 
-                     className="ut-button:bg-[#007ACC]"
+                    className="ut-button:bg-[#007ACC]"
 
                     appearance={{
-  container:
-    "flex flex-col items-center gap-3",
+                      container:
+                        "flex flex-col items-center gap-3",
 
-  button:
-    "bg-[#007ACC] hover:bg-[#0062A3] text-white px-5 py-2 rounded-xl border-0",
+                      button:
+                        "bg-[#007ACC] hover:bg-[#0062A3] text-white px-5 py-2 rounded-xl border-0",
 
-  allowedContent:
-    "text-gray-500 text-sm",
-
-  uploadIcon:
-    "text-white",
-
-  label:
-    "text-gray-500",
-}}
+                      allowedContent:
+                        "text-black text-sm",
+                    }}
 
                     content={{
-  button() {
-    return form.image
-      ? "Ganti Gambar"
-      : "Upload Gambar";
-  },
+                      button() {
+                        return form.image
+                          ? "Ganti Gambar"
+                          : "Upload Gambar";
+                      },
 
-  allowedContent() {
-    return "PNG, JPG hingga 4MB";
-  },
-}}
+                      allowedContent() {
+                        return "PNG, JPG hingga 4MB";
+                      },
+                    }}
 
                     onClientUploadComplete={(
                       res
