@@ -999,7 +999,7 @@ className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 ou
         }`}
       >
         {/* HEADER */}
-        <div className="w-full border border-blue-100 rounded-xl px-4 py-3 text-black placeholder:text-zinc-500">
+        <div className="h-16 border-b border-zinc-100 px-4 flex items-center justify-between text-black placeholder:text-zinc-500">
           <h2 className="font-bold text-lg">
             Keranjang
           </h2>
@@ -1038,11 +1038,11 @@ className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 ou
                     />
 
                     <div className="flex-1">
-  <h3 className="font-semibold text-sm">
+  <h3 className="font-semibold text-sm text-black placeholder:text-zinc-500">
     {item.name}
   </h3>
 
-  <p className="font-bold text-sm mt-1">
+  <p className="font-bold text-sm mt-1 text-black placeholder:text-zinc-500">
     Rp{" "}
     {(
   getFinalPrice(item) *
@@ -1053,7 +1053,7 @@ className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 ou
   </p>
 
   {/* QTY CONTROL */}
-  <div className="flex items-center gap-2 mt-3">
+  <div className="flex items-center gap-2 mt-3 ">
     
     {/* MINUS */}
     <button
@@ -1069,13 +1069,13 @@ className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 ou
             prev[item.id] - 1,
         }));
       }}
-      className="w-7 h-7 rounded-lg border border-blue-100 flex items-center justify-center bg-white"
+      className="w-7 h-7 rounded-lg border border-blue-100 flex items-center justify-center bg-white text-black placeholder:text-zinc-500"
     >
       <Minus size={14} />
     </button>
 
     {/* QTY */}
-    <span className="text-sm font-semibold min-w-[20px] text-center">
+    <span className="text-sm font-semibold min-w-[20px] text-center text-black placeholder:text-zinc-500">
       {cart[item.id]}
     </span>
 
@@ -1098,7 +1098,7 @@ className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 ou
             prev[item.id] + 1,
         }));
       }}
-      className="w-7 h-7 rounded-lg bg-[#007ACC] text-white flex items-center justify-center"
+      className="w-7 h-7 rounded-lg bg-[#007ACC] text-white flex items-center justify-center "
     >
       <Plus size={14} />
     </button>
@@ -1210,7 +1210,7 @@ className="w-full border border-blue-100 rounded-xl px-4 py-3 text-black placeho
       Subtotal
     </span>
 
-    <span className="font-medium">
+    <span className="font-medium text-black placeholder:text-zinc-500">
       Rp{" "}
       {subtotal.toLocaleString(
         "id-ID"
