@@ -2,15 +2,13 @@
   "name": "toko-online",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
-  "dev": "next dev --turbopack",
-  "build": "prisma db push && next build",
-  "start": "next start",
-  "lint": "eslint",
-  "postinstall": "prisma generate"
-},
-
+    "dev": "next dev --turbopack",
+    "build": "prisma db push && next build",
+    "start": "next start",
+    "lint": "eslint",
+    "postinstall": "prisma generate"
+  },
   "dependencies": {
     "@prisma/client": "^5.22.0",
     "@supabase/supabase-js": "^2.105.4",
@@ -25,7 +23,6 @@
     "sonner": "^2.0.7",
     "uploadthing": "^7.0.0"
   },
-
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
