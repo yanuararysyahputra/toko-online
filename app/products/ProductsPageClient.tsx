@@ -705,8 +705,7 @@ setOpenCart(false);
                   e.target.value
                 )
               }
-              className="w-full bg-white border border-blue-100 rounded-2xl pl-11 pr-4 py-3 outline-none focus:border-[#007ACC]"
-            />
+className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 outline-none text-black placeholder:text-zinc-500"            />
           </div>
         </div>
 
@@ -1000,7 +999,7 @@ setOpenCart(false);
         }`}
       >
         {/* HEADER */}
-        <div className="h-16 border-b border-zinc-100 px-4 flex items-center justify-between">
+        <div className="w-full border border-blue-100 rounded-xl px-4 py-3 text-black placeholder:text-zinc-500">
           <h2 className="font-bold text-lg">
             Keranjang
           </h2>
@@ -1139,8 +1138,7 @@ setOpenCart(false);
         e.target.value
       )
     }
-    className="w-full border border-blue-100 rounded-xl px-4 py-3"
-  />
+className="w-full border border-blue-100 rounded-xl px-4 py-3 text-black placeholder:text-zinc-500"  />
 
   <button
     onClick={applyVoucher}
