@@ -28,8 +28,8 @@ type Product = {
   stock: number;
   category: string;
 
-  flashSalePrice?: number;
-  flashSaleEnd?: string;
+  flashSalePrice?: number | null;
+  flashSaleEnd?: string | null;
 };
 
 export default function ProductsPageClient({
