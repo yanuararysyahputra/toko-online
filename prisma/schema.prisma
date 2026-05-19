@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id            String   @id @default(cuid())
+  name          String
+  description   String
+  price         Int
+  image         String
+  stock         Int
+  category      String
+
+  flashSalePrice Int?
+  flashSaleEnd   DateTime?
+
+  createdAt     DateTime @default(now())
+}
+
+model Voucher {
+  id            String   @id @default(cuid())
+  code          String   @unique
+  discount      Int
+  minPurchase   Int
+  expiredAt     DateTime
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+}
