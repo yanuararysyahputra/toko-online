@@ -63,15 +63,6 @@ export default function AdminPage() {
   const [showVoucher, setShowVoucher] =
     useState(false);
   
-  const [
-  flashSalePrice,
-  setFlashSalePrice,
-] = useState("");
-
-const [
-  flashSaleEnd,
-  setFlashSaleEnd,
-] = useState("");
 
   const [voucherCode, setVoucherCode] =
     useState("");
@@ -86,6 +77,10 @@ const [
     setVoucherMinPurchase,
   ] = useState("");
 
+  const [
+  voucherMaxDiscount,
+  setVoucherMaxDiscount,
+] = useState("");
   const [
     voucherExpired,
     setVoucherExpired,
@@ -278,6 +273,11 @@ const [
                   Number(
                     voucherMinPurchase
                   ),
+                
+                maxDiscount:
+  Number(
+    voucherMaxDiscount
+  ),
 
                 expiredAt:
                   voucherExpired,
@@ -745,12 +745,14 @@ const [
     <input
       type="number"
       placeholder="Contoh: 25000"
-      value={flashSalePrice}
-      onChange={(e) =>
-        setFlashSalePrice(
-          e.target.value
-        )
-      }
+      value={form.flashSalePrice}
+onChange={(e) =>
+  setForm({
+    ...form,
+    flashSalePrice:
+      e.target.value,
+  })
+}
       className="w-full h-14 rounded-2xl border border-blue-100 bg-white px-5 outline-none"
     />
 
@@ -768,12 +770,14 @@ const [
 
     <input
       type="datetime-local"
-      value={flashSaleEnd}
-      onChange={(e) =>
-        setFlashSaleEnd(
-          e.target.value
-        )
-      }
+      value={form.flashSaleEnd}
+onChange={(e) =>
+  setForm({
+    ...form,
+    flashSaleEnd:
+      e.target.value,
+  })
+}
       className="w-full h-14 rounded-2xl border border-blue-100 bg-white px-5 outline-none"
     />
 
@@ -860,6 +864,18 @@ const [
                 }
                 className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
               />
+
+              <input
+  type="number"
+  placeholder="Maksimal Diskon"
+  value={voucherMaxDiscount}
+  onChange={(e) =>
+    setVoucherMaxDiscount(
+      e.target.value
+    )
+  }
+  className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
+/>
 
               <input
                 type="date"

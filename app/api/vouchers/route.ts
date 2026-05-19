@@ -1,5 +1,3 @@
-export const dynamic =
-  "force-dynamic";
 import { NextResponse } from "next/server";
 
 import { prisma } from "@/lib/prisma";
@@ -43,27 +41,33 @@ export async function POST(
       await req.json();
 
     const voucher =
-      await prisma.voucher.create({
-        data: {
-          code:
-            body.code.toUpperCase(),
+  await prisma.voucher.create({
+    data: {
 
-          discount:
-            Number(
-              body.discount
-            ),
+      code:
+        body.code,
 
-          minPurchase:
-            Number(
-              body.minPurchase
-            ),
+      discount:
+        Number(
+          body.discount
+        ),
 
-          expiredAt:
-            new Date(
-              body.expiredAt
-            ),
-        },
-      });
+      minPurchase:
+        Number(
+          body.minPurchase
+        ),
+
+      maxDiscount:
+        Number(
+          body.maxDiscount
+        ),
+
+      expiredAt:
+        new Date(
+          body.expiredAt
+        ),
+    },
+  });
 
     return NextResponse.json(
       voucher

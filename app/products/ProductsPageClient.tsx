@@ -28,8 +28,8 @@ type Product = {
   stock: number;
   category: string;
 
-  flashSalePrice?: number | null;
-  flashSaleEnd?: Date | string | null;
+  flashSalePrice?: number;
+  flashSaleEnd?: string;
 };
 
 export default function ProductsPageClient({
@@ -100,6 +100,23 @@ function getFinalPrice(
     : product.price;
 }
 
+useEffect(() => {
+
+  const interval =
+    setInterval(() => {
+
+      forceUpdate(
+        (prev) => prev + 1
+      );
+
+    }, 1000);
+
+  return () =>
+    clearInterval(
+      interval
+    );
+
+}, []);
   /* FILTER */
   const filteredProducts =
     useMemo(() => {
@@ -131,7 +148,78 @@ function getFinalPrice(
   selectedCategory,
 ]);
 
+function getCountdown(
+  endDate: string
+) {
+
+  const total =
+    new Date(endDate).getTime() -
+    new Date().getTime();
+
+  if (total <= 0)
+    return "00:00:00";
+
+  const hours =
+    Math.floor(
+      total /
+        (1000 * 60 * 60)
+    );
+
+  const minutes =
+    Math.floor(
+      (total %
+        (1000 *
+          60 *
+          60)) /
+        (1000 * 60)
+    );
+
+  const seconds =
+    Math.floor(
+      (total %
+        (1000 * 60)) /
+        1000
+    );
+
+  return `${String(
+    hours
+  ).padStart(
+    2,
+    "0"
+  )}:${String(
+    minutes
+  ).padStart(
+    2,
+    "0"
+  )}:${String(
+    seconds
+  ).padStart(
+    2,
+    "0"
+  )}`;
+}
+
   async function applyVoucher() {
+
+    /* CEK FLASH SALE */
+const hasFlashSale =
+  cartProducts.some(
+    (product) =>
+      product.flashSalePrice &&
+      product.flashSaleEnd &&
+      new Date(
+        product.flashSaleEnd
+      ) > new Date()
+  );
+
+if (hasFlashSale) {
+
+  toast.error(
+    "Produk flash sale tidak bisa menggunakan voucher"
+  );
+
+  return;
+}
 
   if (!voucher) {
     toast.error(
@@ -233,6 +321,8 @@ function getFinalPrice(
     );
   }
 }
+const [, forceUpdate] =
+  useState(0);
 
   const [voucher, setVoucher] =
   useState("");
@@ -342,6 +432,13 @@ function getFinalPrice(
       (product) => cart[product.id]
     );
 
+    const totalItems =
+  Object.values(cart).reduce(
+    (total, qty) =>
+      total + qty,
+    0
+  );
+
   /* TOTAL */
   const subtotal =
   cartProducts.reduce(
@@ -389,16 +486,20 @@ const validDiscount =
     ? discount
     : 0;
 
-const totalPrice =
-  subtotal -
+const calculatedDiscount =
   subtotal *
-    (validDiscount / 100);
+  (validDiscount / 100);
 
-  const totalItems =
-    Object.values(cart).reduce(
-      (a, b) => a + b,
-      0
-    );
+const finalDiscount =
+  foundVoucher?.maxDiscount
+    ? Math.min(
+        calculatedDiscount,
+        foundVoucher.maxDiscount
+      )
+    : calculatedDiscount;
+
+const totalPrice =
+  subtotal - finalDiscount;
 
   /* CHECKOUT */
   async function checkoutWhatsApp() {
@@ -419,8 +520,7 @@ cart[item.id]).toLocaleString("id-ID")}`
   const voucherText =
     validDiscount > 0
       ? `%0A%0A🎫 Voucher: ${voucher.toUpperCase()} (${validDiscount}% OFF)%0A💸 Hemat: Rp ${(
-          subtotal *
-          (validDiscount / 100)
+          finalDiscount
         ).toLocaleString("id-ID")}`
       : `%0A%0A🎫 Voucher: Tidak menggunakan voucher`;
 
@@ -733,15 +833,19 @@ setOpenCart(false);
       </span>
     </div>
 
-    <p className="text-[10px] text-red-500 mt-1 font-medium">
-      Berakhir:
-      {" "}
-      {new Date(
-        product.flashSaleEnd
-      ).toLocaleDateString(
-        "id-ID"
-      )}
-    </p>
+    <div className="mt-2 bg-red-50 border border-red-100 rounded-xl px-2 py-2">
+
+  <p className="text-[10px] text-red-500 font-semibold">
+    FLASH SALE BERAKHIR DALAM
+  </p>
+
+  <p className="text-sm font-bold text-red-600 mt-1 tracking-wider">
+    ⏰{" "}
+    {getCountdown(
+      product.flashSaleEnd
+    )}
+  </p>
+</div>
   </>
 )}
 
@@ -1080,8 +1184,7 @@ setOpenCart(false);
       <span className="font-bold text-green-600">
         Rp{" "}
         {(
-          subtotal *
-          (validDiscount / 100)
+          finalDiscount
         ).toLocaleString(
           "id-ID"
         )}
@@ -1116,8 +1219,7 @@ setOpenCart(false);
       <span className="font-bold text-green-600">
         - Rp{" "}
         {(
-          subtotal *
-          (validDiscount / 100)
+          finalDiscount
         ).toLocaleString(
           "id-ID"
         )}

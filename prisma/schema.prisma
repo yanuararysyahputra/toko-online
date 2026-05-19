@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -27,6 +27,7 @@ model Voucher {
   code          String   @unique
   discount      Int
   minPurchase   Int
+  maxDiscount  Int
   expiredAt     DateTime
   isActive      Boolean  @default(true)
   createdAt     DateTime @default(now())
