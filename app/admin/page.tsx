@@ -658,7 +658,7 @@ export default function AdminPage() {
               </div>
 
               {/* INPUT */}
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid md:grid-cols-2 gap-5 placeholder:text-black">
 
                 <input
                   type="text"
