@@ -16,7 +16,7 @@ export async function POST(
       await req.json();
 
     const items =
-      body.items;
+      body.items || [];
 
     for (const item of items) {
 
@@ -31,7 +31,6 @@ export async function POST(
         continue;
       }
 
-      /* CEK STOCK */
       if (
         product.stock <
         item.qty
@@ -48,7 +47,6 @@ export async function POST(
         );
       }
 
-      /* UPDATE STOCK */
       await prisma.product.update({
         where: {
           id: item.id,
