@@ -644,11 +644,11 @@ setOpenCart(false);
 
             <div>
               <h1 className="font-bold text-black">
-                Toko Aga
+                Toko Maju Jaya
               </h1>
 
               <p className="text-xs text-zinc-500">
-                Toko Sembako
+                Jl.P. Tirtayasa No.28, Sukabumi Bandar Lampung
               </p>
             </div>
           </div>
@@ -905,7 +905,7 @@ className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 ou
                                   product.id
                                 )
                               }
-                              className="w-8 h-8 rounded-lg bg-white border border-blue-100 flex items-center justify-center"
+                              className="w-8 h-8 rounded-lg bg-white border border-blue-100 flex items-center justify-center text-black placeholder:text-zinc-500"
                             >
                               <Minus
                                 size={
@@ -914,7 +914,7 @@ className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 ou
                               />
                             </button>
 
-                            <span className="font-semibold text-sm">
+                            <span className="font-semibold text-sm text-black placeholder:text-zinc-500">
                               {
                                 tempQty[
                                   product
@@ -1295,7 +1295,7 @@ className="w-full border border-blue-100 rounded-xl px-4 py-3 text-black placeho
 
         <div>
           <h2 className="text-sm font-bold">
-            Toko Aga
+            Toko Maju Jaya
           </h2>
 
           <p className="text-white/70 text-xs">

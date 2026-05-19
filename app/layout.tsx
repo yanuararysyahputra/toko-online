@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Toko Aga",
+  title: "Toko Maju Jaya",
   description: "Toko sembako modern",
 };
 
