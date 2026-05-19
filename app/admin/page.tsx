@@ -1258,7 +1258,7 @@ className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 ou
 
         <div>
           <h2 className="text-sm font-bold">
-            Toko Aga
+            Toko Maju Jaya
           </h2>
 
           <p className="text-white/70 text-xs">
