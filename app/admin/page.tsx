@@ -658,7 +658,7 @@ export default function AdminPage() {
               </div>
 
               {/* INPUT */}
-              <div className="grid md:grid-cols-2 gap-5 placeholder:text-black">
+              <div className="grid md:grid-cols-2 gap-5">
 
                 <input
                   type="text"
@@ -671,8 +671,7 @@ export default function AdminPage() {
                         e.target.value,
                     })
                   }
-                  className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
-                />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"                />
 
                 <input
                   type="number"
@@ -685,8 +684,7 @@ export default function AdminPage() {
                         e.target.value,
                     })
                   }
-                  className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
-                />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"                />
 
                 <input
                   type="number"
@@ -699,8 +697,7 @@ export default function AdminPage() {
                         e.target.value,
                     })
                   }
-                  className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
-                />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"                />
 
                 <select
                   value={form.category}
@@ -711,8 +708,7 @@ export default function AdminPage() {
                         e.target.value,
                     })
                   }
-                  className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
-                >
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black"                >
                   <option>
                     Bahan Pokok
                   </option>
@@ -755,8 +751,7 @@ onChange={(e) =>
       e.target.value,
   })
 }
-      className="w-full h-14 rounded-2xl border border-blue-100 bg-white px-5 outline-none"
-    />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"    />
 
     <p className="text-xs text-zinc-500">
       Kosongkan jika tidak ingin flash sale.
@@ -780,8 +775,7 @@ onChange={(e) =>
       e.target.value,
   })
 }
-      className="w-full h-14 rounded-2xl border border-blue-100 bg-white px-5 outline-none"
-    />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"    />
 
     <p className="text-xs text-zinc-500">
       Setelah waktu habis,
@@ -804,8 +798,7 @@ onChange={(e) =>
                   })
                 }
                 rows={4}
-                className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none resize-none"
-              />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none resize-none text-black placeholder:text-zinc-500"              />
 
               {/* BUTTON */}
               <button className="bg-[#007ACC] hover:bg-[#0062A3] transition text-white px-8 py-3 rounded-2xl font-semibold">
@@ -838,8 +831,7 @@ onChange={(e) =>
                     e.target.value
                   )
                 }
-                className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
-              />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"              />
 
               <input
                 type="number"
@@ -850,8 +842,7 @@ onChange={(e) =>
                     e.target.value
                   )
                 }
-                className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
-              />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"              />
 
               <input
                 type="number"
@@ -864,8 +855,7 @@ onChange={(e) =>
                     e.target.value
                   )
                 }
-                className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
-              />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"              />
 
               <input
   type="number"
@@ -876,8 +866,7 @@ onChange={(e) =>
       e.target.value
     )
   }
-  className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
-/>
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"/>
 
               <input
                 type="date"
@@ -889,8 +878,7 @@ onChange={(e) =>
                     e.target.value
                   )
                 }
-                className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none"
-              />
+className="w-full bg-[#F5F9FF] border border-blue-100 rounded-2xl px-4 py-3 outline-none text-black placeholder:text-zinc-500"              />
 
               <button
                 type="button"
@@ -1088,8 +1076,7 @@ onChange={(e) =>
                 e.target.value
               )
             }
-            className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 outline-none"
-          />
+className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 outline-none text-black placeholder:text-zinc-500"          />
         </div>
 
         {/* PRODUCTS */}
