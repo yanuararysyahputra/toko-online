@@ -29,7 +29,7 @@ type Product = {
   category: string;
 
   flashSalePrice?: number | null;
-  flashSaleEnd?: string | null;
+  flashSaleEnd?: Date | string | null;
 };
 
 export default function ProductsPageClient({
