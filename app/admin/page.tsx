@@ -1281,7 +1281,7 @@ className="w-full bg-white border border-blue-100 rounded-2xl pl-12 pr-4 py-4 ou
           </p>
 
           <p>
-            ✉ tokoaga@gmail.com
+            ✉ tokomajujaya@gmail.com
           </p>
         </div>
       </div>

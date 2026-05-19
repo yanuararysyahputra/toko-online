@@ -1318,7 +1318,7 @@ className="w-full border border-blue-100 rounded-xl px-4 py-3 text-black placeho
           </p>
 
           <p>
-            ✉ tokoaga@gmail.com
+            ✉ tokomajujaya@gmail.com
           </p>
         </div>
       </div>
